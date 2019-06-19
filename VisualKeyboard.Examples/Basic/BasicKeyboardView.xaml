@@ -1,0 +1,263 @@
+﻿<Window x:Class="VisualKeyboard.Examples.Basic.BasicKeyboardView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
+        xmlns:local="clr-namespace:VisualKeyboard.Examples.Basic"
+        mc:Ignorable="d"
+        Title="Basic Keyboard" Height="450" Width="800">
+    <Grid FocusManager.FocusedElement="{Binding ElementName=Text}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBox Grid.Row="0" Margin="1" BorderBrush="Black" FontSize="14" Name="Text"/>
+        <kbd:Keyboard Grid.Row="1">
+            <kbd:Keyboard.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="Margin" Value="1"/>
+                </Style>
+            </kbd:Keyboard.Resources>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <!--#region Row 0-->
+            <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3"  kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem3">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="~"/>
+                    <TextBlock Text="`"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="3" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="!"/>
+                    <TextBlock Text="1"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="6" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk2">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="@"/>
+                    <TextBlock Text="2"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="9" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk3">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="#"/>
+                    <TextBlock Text="3"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="12" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="$"/>
+                    <TextBlock Text="4"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="15" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk5">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="%"/>
+                    <TextBlock Text="5"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="18" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk6">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="^"/>
+                    <TextBlock Text="6"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="21" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk7">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="&amp;"/>
+                    <TextBlock Text="7"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="24" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk8">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="*"/>
+                    <TextBlock Text="8"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="27" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk9">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="("/>
+                    <TextBlock Text="9"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="30" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Vk0">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text=")"/>
+                    <TextBlock Text="0"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="33" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="OemMinus">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="_"/>
+                    <TextBlock Text="-"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="36" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="OemPlus">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="+"/>
+                    <TextBlock Text="="/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="39" Grid.ColumnSpan="5" Content="Backspace" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Back"/>
+            <!--#endregion-->
+
+            <!--#region Row 1-->
+            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="5" Content="Tab" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Tab"/>
+            <Button Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="3" Content="Q" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkQ"/>
+            <Button Grid.Row="1" Grid.Column="8" Grid.ColumnSpan="3" Content="W" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkW"/>
+            <Button Grid.Row="1" Grid.Column="11" Grid.ColumnSpan="3" Content="E" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkE"/>
+            <Button Grid.Row="1" Grid.Column="14" Grid.ColumnSpan="3" Content="R" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkR"/>
+            <Button Grid.Row="1" Grid.Column="17" Grid.ColumnSpan="3" Content="T" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkT"/>
+            <Button Grid.Row="1" Grid.Column="20" Grid.ColumnSpan="3" Content="Y" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkY"/>
+            <Button Grid.Row="1" Grid.Column="23" Grid.ColumnSpan="3" Content="U" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkU"/>
+            <Button Grid.Row="1" Grid.Column="26" Grid.ColumnSpan="3" Content="I" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkI"/>
+            <Button Grid.Row="1" Grid.Column="29" Grid.ColumnSpan="3" Content="O" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkO"/>
+            <Button Grid.Row="1" Grid.Column="32" Grid.ColumnSpan="3" Content="P" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkP"/>
+            <Button Grid.Row="1" Grid.Column="35" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem4">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{}{"/>
+                    <TextBlock Text="["/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="38" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem6">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="{}}"/>
+                    <TextBlock Text="]"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="1" Grid.Column="41" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem5">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="|"/>
+                    <TextBlock Text="\"/>
+                </StackPanel>
+            </Button>
+            <!--#endregion-->
+
+            <!--#region Row 2-->
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Content="CapsLock"  kbd:Keyboard.KeyBehaviour="TogglingModifier" kbd:Keyboard.KeyCode="Capital"/>
+
+            <Button Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" Content="A" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkA"/>
+            <!--<Button Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" kdb2:Keyboard.KeyCode="Vk_A" Content="a" kdb2:Keyboard.KeyType="Chord">
+                <kdb2:Keyboard.ChordKeys>
+                    <kdb2:VirtualKeyCode>Control</kdb2:VirtualKeyCode>
+                </kdb2:Keyboard.ChordKeys>
+            </Button>-->
+            <Button Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="3" Content="S" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkS"/>
+            <Button Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="3" Content="D" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkD"/>
+            <Button Grid.Row="2" Grid.Column="15" Grid.ColumnSpan="3" Content="F" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkF"/>
+            <Button Grid.Row="2" Grid.Column="18" Grid.ColumnSpan="3" Content="G" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkG"/>
+            <Button Grid.Row="2" Grid.Column="21" Grid.ColumnSpan="3" Content="H" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkH"/>
+            <Button Grid.Row="2" Grid.Column="24" Grid.ColumnSpan="3" Content="J" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkJ"/>
+            <Button Grid.Row="2" Grid.Column="27" Grid.ColumnSpan="3" Content="K" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkK"/>
+            <Button Grid.Row="2" Grid.Column="30" Grid.ColumnSpan="3" Content="L" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkL"/>
+            <Button Grid.Row="2" Grid.Column="33" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem1">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text=":"/>
+                    <TextBlock Text=";"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="36" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem7">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="&quot;"/>
+                    <TextBlock Text="&apos;"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="2" Grid.Column="39" Grid.ColumnSpan="6" Content="Enter" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Return"/>
+            <!--#endregion-->
+
+            <!--#region Row 3-->
+            <Button Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="7" Content="Shift" kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode="Shift"/>
+            <Button Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="3" Content="Z" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkZ"/>
+            <Button Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="3" Content="X" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkX"/>
+            <Button Grid.Row="3" Grid.Column="13" Grid.ColumnSpan="3" Content="C" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkC"/>
+            <Button Grid.Row="3" Grid.Column="16" Grid.ColumnSpan="3" Content="V" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkC"/>
+            <Button Grid.Row="3" Grid.Column="19" Grid.ColumnSpan="3" Content="B" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkB"/>
+            <Button Grid.Row="3" Grid.Column="22" Grid.ColumnSpan="3" Content="N" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkN"/>
+            <Button Grid.Row="3" Grid.Column="25" Grid.ColumnSpan="3" Content="M" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkM"/>
+            <Button Grid.Row="3" Grid.Column="28" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="OemComa">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="&lt;"/>
+                    <TextBlock Text=","/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="31" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="OemPeriod">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="&gt;"/>
+                    <TextBlock Text="."/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="34" Grid.ColumnSpan="3" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Oem2">
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="?"/>
+                    <TextBlock Text="/"/>
+                </StackPanel>
+            </Button>
+            <Button Grid.Row="3" Grid.Column="37" Grid.ColumnSpan="7" Content="Shift" kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode ="Shift"/>
+            <!--#endregion-->
+
+            <!--#region Row 4-->
+            <Button Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" Content="Ctrl" kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode="Control"/>
+            <Button Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="3" Content="Alt"  kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode="Menu"/>
+            <Button Grid.Row="4" Grid.Column="8" Grid.ColumnSpan="28" Content="Space" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="Space"/>
+            <Button Grid.Row="4" Grid.Column="36" Grid.ColumnSpan="3" Content="Alt"  kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode="Menu"/>
+            <Button Grid.Row="4" Grid.Column="39" Grid.ColumnSpan="5" Content="Ctrl" kbd:Keyboard.KeyBehaviour="InstantaneousModifier" kbd:Keyboard.KeyCode="Control"/>
+            <!--#endregion-->
+        </kbd:Keyboard>
+    </Grid>
+</Window>
