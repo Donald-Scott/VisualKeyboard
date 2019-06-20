@@ -105,6 +105,28 @@ namespace VisualKeyboard.Tests
             Assert.AreEqual("Goodbye", inputSimulator.GetTextInput());
         }
 
+        [TestMethod]
+        public void ChangeKeyBehaviour()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            TestabelKeyboard keyboard = CreateKeyboard(inputSimulator);
+
+            MockButton btn = keyboard.Children[3] as MockButton;
+            btn.ClickButton();
+
+            Assert.AreEqual(1, inputSimulator.KeyActions.Count);
+            Assert.AreEqual(WindowsInput.Native.VirtualKeyCode.VK_A, inputSimulator.KeyActions[0].KeyCode);
+            Assert.AreEqual(string.Empty, inputSimulator.GetTextInput());
+
+            inputSimulator.ClearState();
+
+            Keyboard.SetKeyBehaviour(btn, KeyBehaviour.Text);
+            btn.ClickButton();
+
+            Assert.AreEqual(0, inputSimulator.KeyActions.Count);
+            Assert.AreEqual("Virtual Key", inputSimulator.GetTextInput());
+        }
+
         private TestabelKeyboard CreateKeyboard(MockInputSimulator inputSimulator)
         {
             TestabelKeyboard keyboard = new TestabelKeyboard();
@@ -148,6 +170,7 @@ namespace VisualKeyboard.Tests
             Keyboard.SetColumn(btnA, 3);
             Keyboard.SetKeyBehaviour(btnA, KeyBehaviour.VirtualKey);
             Keyboard.SetKeyCode(btnA, VirtualKeyCode.VkA);
+            Keyboard.SetOutputText(btnA, "Virtual Key");
 
             MockButton btnHello = new MockButton();
             Keyboard.SetColumn(btnHello, 4);
