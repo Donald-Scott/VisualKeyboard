@@ -8,15 +8,22 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
+        <Grid.Resources>
+            <Style TargetType="Button">
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Focusable" Value="False"/>
+                <Setter Property="Margin" Value="1"/>
+            </Style>
+        </Grid.Resources>
         <!--#region lower case-->
         <kbd:Keyboard x:Name="lowerCaseKeyboard" kbd:Keyboard.ModifierChanged="ModifierChanged">
-            <kbd:Keyboard.Resources>
+            <!--<kbd:Keyboard.Resources>
                 <Style TargetType="Button">
                     <Setter Property="FontSize" Value="14"/>
                     <Setter Property="Focusable" Value="False"/>
                     <Setter Property="Margin" Value="1"/>
                 </Style>
-            </kbd:Keyboard.Resources>
+            </kbd:Keyboard.Resources>-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -148,13 +155,13 @@
 
         <!--#region shifted case-->
         <kbd:Keyboard x:Name="shiftedKeyboard" kbd:Keyboard.ModifierChanged="ModifierChanged">
-            <kbd:Keyboard.Resources>
+            <!--<kbd:Keyboard.Resources>
                 <Style TargetType="Button">
                     <Setter Property="FontSize" Value="14"/>
                     <Setter Property="Focusable" Value="False"/>
                     <Setter Property="Margin" Value="1"/>
                 </Style>
-            </kbd:Keyboard.Resources>
+            </kbd:Keyboard.Resources>-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -286,13 +293,13 @@
 
         <!--#region caps case-->
         <kbd:Keyboard x:Name="capsKeyboard" kbd:Keyboard.ModifierChanged="ModifierChanged">
-            <kbd:Keyboard.Resources>
+            <!--<kbd:Keyboard.Resources>
                 <Style TargetType="Button">
                     <Setter Property="FontSize" Value="14"/>
                     <Setter Property="Focusable" Value="False"/>
                     <Setter Property="Margin" Value="1"/>
                 </Style>
-            </kbd:Keyboard.Resources>
+            </kbd:Keyboard.Resources>-->
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
