@@ -193,11 +193,6 @@
             <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="6" Content="CapsLock"  kbd:Keyboard.KeyBehaviour="TogglingModifier" kbd:Keyboard.KeyCode="Capital"/>
 
             <Button Grid.Row="2" Grid.Column="6" Grid.ColumnSpan="3" Content="A" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkA"/>
-            <!--<Button Grid.Row="2" Grid.Column="4" Grid.ColumnSpan="2" kdb2:Keyboard.KeyCode="Vk_A" Content="a" kdb2:Keyboard.KeyType="Chord">
-                <kdb2:Keyboard.ChordKeys>
-                    <kdb2:VirtualKeyCode>Control</kdb2:VirtualKeyCode>
-                </kdb2:Keyboard.ChordKeys>
-            </Button>-->
             <Button Grid.Row="2" Grid.Column="9" Grid.ColumnSpan="3" Content="S" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkS"/>
             <Button Grid.Row="2" Grid.Column="12" Grid.ColumnSpan="3" Content="D" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkD"/>
             <Button Grid.Row="2" Grid.Column="15" Grid.ColumnSpan="3" Content="F" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkF"/>
@@ -226,7 +221,7 @@
             <Button Grid.Row="3" Grid.Column="7" Grid.ColumnSpan="3" Content="Z" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkZ"/>
             <Button Grid.Row="3" Grid.Column="10" Grid.ColumnSpan="3" Content="X" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkX"/>
             <Button Grid.Row="3" Grid.Column="13" Grid.ColumnSpan="3" Content="C" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkC"/>
-            <Button Grid.Row="3" Grid.Column="16" Grid.ColumnSpan="3" Content="V" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkC"/>
+            <Button Grid.Row="3" Grid.Column="16" Grid.ColumnSpan="3" Content="V" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkV"/>
             <Button Grid.Row="3" Grid.Column="19" Grid.ColumnSpan="3" Content="B" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkB"/>
             <Button Grid.Row="3" Grid.Column="22" Grid.ColumnSpan="3" Content="N" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkN"/>
             <Button Grid.Row="3" Grid.Column="25" Grid.ColumnSpan="3" Content="M" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkM"/>
