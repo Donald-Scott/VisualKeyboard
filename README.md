@@ -35,3 +35,4 @@ xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
   <Button Grid.Row="0" Grid.Column="4" Content="e" kbd:Keyboard.KeyBehaviour="VirtualKey" kbd:Keyboard.KeyCode="VkE"/>
 </kbd:Keyboard>
 ```
+![alt text](https://github.com/Donald-Scott/VisualKeyboard/blob/master/VisualKeyboard.Examples/Images/qwe_kbd.png "Sample keyboard")
