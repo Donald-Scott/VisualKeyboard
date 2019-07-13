@@ -20,7 +20,7 @@ xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
 ```
 
 ```XML
-<kbd:Keyboard Margin="2">
+<kbd:Keyboard">
   <Grid.ColumnDefinitions>
       <ColumnDefinition Width="1.5*"/>
       <ColumnDefinition Width="1.5*"/>
