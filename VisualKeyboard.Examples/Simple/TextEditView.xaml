@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="VisualKeyboard.Examples.TextEditView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisualKeyboard.Examples"
+             xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <StackPanel Orientation="Vertical" FocusManager.FocusedElement="{Binding ElementName=Text}">
+        <TextBlock FontSize="16" TextWrapping="Wrap" Margin="2,2,2,10">
+            This is a simple example showing chord key behaviour.  Key combinations such as CTRL+C can
+            be combined into a single key press operation.
+        </TextBlock>
+        <TextBox x:Name="Text" Margin="2,5,2,10" BorderBrush="Black" BorderThickness="1" FontSize="16" TextWrapping="Wrap">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
+            aliqua. Dolor sed viverra ipsum nunc aliquet bibendum enim. In massa tempor nec feugiat. Nunc aliquet bibendum enim 
+            facilisis gravida. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper. Amet luctus venenatis lectus magna 
+            fringilla. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque in. Egestas egestas fringilla 
+            phasellus faucibus scelerisque eleifend. Sagittis orci a scelerisque purus semper eget duis. Nulla pharetra diam sit 
+            amet nisl suscipit. Sed adipiscing diam donec adipiscing tristique risus nec feugiat in. Fusce ut placerat orci nulla. 
+            Pharetra vel turpis nunc eget lorem dolor. Tristique senectus et netus et malesuada.
+        </TextBox>
+        <kbd:Keyboard Margin="2">
+            <kbd:Keyboard.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="FontSize" Value="14"/>
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="Margin" Value="1"/>
+                </Style>
+            </kbd:Keyboard.Resources>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Row="0" Grid.Column="1" Content="Cut"  kbd:Keyboard.KeyBehaviour="Chord" kbd:Keyboard.KeyCode="VkX">
+                <kbd:Keyboard.ChordKeys>
+                    <kbd:VirtualKeyCode>Control</kbd:VirtualKeyCode>
+                </kbd:Keyboard.ChordKeys>
+            </Button>
+
+            <Button Grid.Row="0" Grid.Column="2" Content="Copy" kbd:Keyboard.KeyBehaviour="Chord" kbd:Keyboard.KeyCode="VkC">
+                <kbd:Keyboard.ChordKeys>
+                    <kbd:VirtualKeyCode>Control</kbd:VirtualKeyCode>
+                </kbd:Keyboard.ChordKeys>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="3" Content="Paste" kbd:Keyboard.KeyBehaviour="Chord" kbd:Keyboard.KeyCode="VkV">
+                <kbd:Keyboard.ChordKeys>
+                    <kbd:VirtualKeyCode>Control</kbd:VirtualKeyCode>
+                </kbd:Keyboard.ChordKeys>
+            </Button>
+            <Button Grid.Row="0" Grid.Column="4" Content="Select All" kbd:Keyboard.KeyBehaviour="Chord" kbd:Keyboard.KeyCode="VkA">
+                <kbd:Keyboard.ChordKeys>
+                    <kbd:VirtualKeyCode>Control</kbd:VirtualKeyCode>
+                </kbd:Keyboard.ChordKeys>
+            </Button>
+        </kbd:Keyboard>
+    </StackPanel>
+</UserControl>
