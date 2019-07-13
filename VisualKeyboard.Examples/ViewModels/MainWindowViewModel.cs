@@ -25,6 +25,8 @@ namespace VisualKeyboard.Examples
 
         public ICommand ShowShiftableExampleCommand { get { return new RelayCommand(ShowShiftableExample); } }
 
+        public ICommand ShowSimpleExamplesCommand { get { return new RelayCommand(ShowSimpleExample); } }
+
         private void ExitApp()
         {
             System.Windows.Application.Current.MainWindow.Close();
@@ -40,6 +42,12 @@ namespace VisualKeyboard.Examples
         {
             ShiftableKeyboardViewModel vm = new ShiftableKeyboardViewModel();
             dlgService.ShowDialog<ShiftableKeyboardView>(this, vm);
+        }
+
+        private void ShowSimpleExample()
+        {
+            SimpleExamplesViewModel vm = new SimpleExamplesViewModel();
+            dlgService.ShowDialog<SimpleExamplesView>(this, vm);
         }
     }
 }

@@ -20,6 +20,7 @@
             <MenuItem Header="Examples">
                 <MenuItem Header="Basic" Command="{Binding ShowBasicExampleCommand}"/>
                 <MenuItem Header="Shiftable" Command="{Binding ShowShiftableExampleCommand}"/>
+                <MenuItem Header="Simple" Command="{Binding ShowSimpleExamplesCommand}"/>
             </MenuItem>
         </Menu>
     </Grid>

@@ -62,9 +62,25 @@
       <DependentUpon>BasicKeyboardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Basic\BasicKeyboardViewModel.cs" />
+    <Compile Include="Simple\EmailView.xaml.cs">
+      <DependentUpon>EmailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\EmailViewModel.cs" />
+    <Compile Include="Simple\QwertyView.xaml.cs">
+      <DependentUpon>QwertyView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\QwertyViewModel.cs" />
     <Compile Include="Shiftable\ShiftableKeyboard.xaml.cs">
       <DependentUpon>ShiftableKeyboard.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Simple\SimpleExamplesViewModel.cs" />
+    <Compile Include="Simple\SimpleExamplesView.xaml.cs">
+      <DependentUpon>SimpleExamplesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\TextEditView.xaml.cs">
+      <DependentUpon>TextEditView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\TextEditViewModel.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Shiftable\ShiftableKeyboardView.xaml.cs">
       <DependentUpon>ShiftableKeyboardView.xaml</DependentUpon>
@@ -76,11 +92,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Simple\EmailView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple\QwertyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Shiftable\ShiftableKeyboard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Shiftable\ShiftableKeyboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple\SimpleExamplesView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple\TextEditView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -129,6 +161,9 @@
       <Project>{927edc3c-fbac-4344-8205-54c88ea70c1a}</Project>
       <Name>VisualKeyboard.Control</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Images\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
