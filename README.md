@@ -14,11 +14,11 @@ There are five different defined key behaviors:
 - Text Keys – This key behavior allows multiple text characters to be input via a single key.
 
 ### Usage
-#### Include the Visual Keyboard namespace
+##### Include the Visual Keyboard namespace
 ```XML
 xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
 ```
-
+##### Add Keyboard control and add child elements to act as keys
 ```XML
 <kbd:Keyboard>
   <Grid.ColumnDefinitions>
@@ -36,3 +36,5 @@ xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
 </kbd:Keyboard>
 ```
 ![alt text](https://github.com/Donald-Scott/VisualKeyboard/blob/master/VisualKeyboard.Examples/Images/qwe_kbd.png "Sample keyboard")
+
+Since the behaviour of the keyboad is defined using attached properties any UIElement that can be added to a Grid can be used as a keyboard key.  If you want to add additional buttons that execute a command other than keyboard input, no problem, just set the KeyBehaviour attached property to "none" or omit this attached property all together and the button will not ack as a keyboard key.
