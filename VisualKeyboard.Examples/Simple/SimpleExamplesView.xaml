@@ -20,6 +20,9 @@
             <DataTemplate DataType="{x:Type local:TextEditViewModel}">
                 <local:TextEditView/>
             </DataTemplate>
+            <DataTemplate DataType="{x:Type local:ImagesViewModel}">
+                <local:ImagesView/>
+            </DataTemplate>
         </TabControl.Resources>
         <TabControl.ItemTemplate>
             <DataTemplate>

@@ -62,6 +62,10 @@
       <DependentUpon>BasicKeyboardView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Basic\BasicKeyboardViewModel.cs" />
+    <Compile Include="Simple\ImagesView.xaml.cs">
+      <DependentUpon>ImagesView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Simple\ImagesViewModel.cs" />
     <Compile Include="Simple\EmailView.xaml.cs">
       <DependentUpon>EmailView.xaml</DependentUpon>
     </Compile>
@@ -89,6 +93,14 @@
     <Compile Include="Utils\RelayCommand.cs" />
     <Compile Include="ViewModels\ViewModelBase.cs" />
     <Page Include="Basic\BasicKeyboardView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="images.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple\ImagesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
