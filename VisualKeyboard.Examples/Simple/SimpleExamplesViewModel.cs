@@ -19,6 +19,7 @@ namespace VisualKeyboard.Examples
             Items.Add(new QwertyViewModel());
             Items.Add(new TextEditViewModel());
             Items.Add(new EmailViewModel());
+            Items.Add(new ImagesViewModel());
 
             SelectedTab = Items[0];
         }
