@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/donscott123/Visual%20Keyboard/_apis/build/status/Donald-Scott.VisualKeyboard?branchName=master)](https://dev.azure.com/donscott123/Visual%20Keyboard/_build/latest?definitionId=1&branchName=master)
+
 WPF on screen keyboard
 Inspired by [WPF Touch Screen Keyboard](https://github.com/imasm/wpfkb).
 
