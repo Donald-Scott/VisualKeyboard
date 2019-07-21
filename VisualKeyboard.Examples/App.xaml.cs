@@ -9,8 +9,10 @@ namespace VisualKeyboard.Examples
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
-            MainWindow app = new MainWindow();
-            app.DataContext = new MainWindowViewModel();
+            MainWindow app = new MainWindow
+            {
+                DataContext = new MainWindowViewModel()
+            };
             app.Show();
         }
     }

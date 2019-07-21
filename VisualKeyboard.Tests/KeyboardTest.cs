@@ -127,10 +127,134 @@ namespace VisualKeyboard.Tests
             Assert.AreEqual("Virtual Key", inputSimulator.GetTextInput());
         }
 
+        [TestMethod]
+        public void GetKeyCode()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            TestabelKeyboard keyboard = CreateKeyboard(inputSimulator);
+
+            MockButton btn = keyboard.Children[3] as MockButton;
+
+            VirtualKeyCode keyCode = Keyboard.GetKeyCode(btn);
+            Assert.AreEqual(VirtualKeyCode.VkA, keyCode);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetKeyCodeExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            _ = Keyboard.GetKeyCode(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetKeyCodeExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            Keyboard.SetKeyCode(null, VirtualKeyCode.VkA);
+        }
+
+        [TestMethod]
+        public void GetBehaviour()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            TestabelKeyboard keyboard = CreateKeyboard(inputSimulator);
+
+            MockButton btn = keyboard.Children[3] as MockButton;
+
+           KeyBehaviour behaviour = Keyboard.GetKeyBehaviour(btn);
+            Assert.AreEqual(KeyBehaviour.VirtualKey, behaviour);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetBehaviourExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            _ = Keyboard.GetKeyBehaviour(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetBehaviourExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            Keyboard.SetKeyBehaviour(null, KeyBehaviour.VirtualKey);
+        }
+
+        [TestMethod]
+        public void GetKeyChord()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            TestabelKeyboard keyboard = CreateKeyboard(inputSimulator);
+
+            MockButton btn = keyboard.Children[5] as MockButton;
+
+            VirtualKeyCollection chordKeys = Keyboard.GetChordKeys(btn);
+            Assert.AreEqual(1, chordKeys.Count);
+            Assert.AreEqual(VirtualKeyCode.Control, chordKeys[0]);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetKeyChordExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            _ = Keyboard.GetChordKeys(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetKeyChordExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            Keyboard.SetChordKeys(null, new VirtualKeyCollection());
+        }
+
+        [TestMethod]
+        public void GetKeyText()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            TestabelKeyboard keyboard = CreateKeyboard(inputSimulator);
+
+            MockButton btn = keyboard.Children[4] as MockButton;
+
+            string text = Keyboard.GetOutputText(btn);
+
+            Assert.AreEqual("Hello World!", text);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void GetKeyTextExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            _ = Keyboard.GetOutputText(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void SetKeyTextExpectArgNullException()
+        {
+            MockInputSimulator inputSimulator = new MockInputSimulator();
+            _ = CreateKeyboard(inputSimulator);
+            Keyboard.SetOutputText(null, "Hellow World!");
+        }
+
         private TestabelKeyboard CreateKeyboard(MockInputSimulator inputSimulator)
         {
-            TestabelKeyboard keyboard = new TestabelKeyboard();
-            keyboard.InputSimulator = inputSimulator;
+            TestabelKeyboard keyboard = new TestabelKeyboard
+            {
+                InputSimulator = inputSimulator
+            };
 
             keyboard.BeginInit();
 

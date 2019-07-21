@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +15,8 @@ namespace VisualKeyboard.Control
     /// </summary>
     internal abstract class LogicalKey
     {
-        private IKeyboardSimulator keyboard;
-        private IInputDeviceStateAdaptor inputDeviceState;
+        private readonly IKeyboardSimulator keyboard;
+        private readonly IInputDeviceStateAdaptor inputDeviceState;
         internal event EventHandler<LogicalKeyEventArgs> KeyPressed;
 
         internal LogicalKey(IInputSimulator inputSimulator, VirtualKeyCode key)
@@ -126,9 +127,11 @@ namespace VisualKeyboard.Control
                     // Broadcast the event with the arguments provided.
                     stateChangeListener?.Invoke(this, args);
                 }
+#pragma warning disable CA1031 // Do not catch general exception types
                 catch (Exception ex)
+#pragma warning restore CA1031 // Do not catch general exception types
                 {
-                    System.Diagnostics.Trace.WriteLine(string.Format("KeyPressed listener threw exception: {0}", ex));
+                    System.Diagnostics.Trace.WriteLine(string.Format(CultureInfo.CurrentCulture, "KeyPressed listener threw exception: {0}", ex));
                     // Don't rethrow the exception .
                 }
             }

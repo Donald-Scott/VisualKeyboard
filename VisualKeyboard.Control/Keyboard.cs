@@ -14,60 +14,100 @@ namespace VisualKeyboard.Control
         private List<ModifierKeyBase> modifierKeys;
         private IInputSimulator inputSimulator;
 
-        public static VirtualKeyCode GetKeyCode(DependencyObject obj)
+        public static VirtualKeyCode GetKeyCode(DependencyObject property)
         {
-            return (VirtualKeyCode)obj.GetValue(KeyCodeProperty);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            return (VirtualKeyCode)property.GetValue(KeyCodeProperty);
         }
 
-        public static void SetKeyCode(DependencyObject obj, VirtualKeyCode value)
+        public static void SetKeyCode(DependencyObject property, VirtualKeyCode value)
         {
-            obj.SetValue(KeyCodeProperty, value);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            property.SetValue(KeyCodeProperty, value);
         }
 
 
         public static readonly DependencyProperty KeyCodeProperty =
             DependencyProperty.RegisterAttached("KeyCode", typeof(VirtualKeyCode), typeof(Keyboard), new PropertyMetadata(VirtualKeyCode.None, KeyCodeChanged));
 
-        public static KeyBehaviour GetKeyBehaviour(DependencyObject obj)
+        public static KeyBehaviour GetKeyBehaviour(DependencyObject property)
         {
-            return (KeyBehaviour)obj.GetValue(KeyBehaviourProperty);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            return (KeyBehaviour)property.GetValue(KeyBehaviourProperty);
         }
 
-        public static void SetKeyBehaviour(DependencyObject obj, KeyBehaviour value)
+        public static void SetKeyBehaviour(DependencyObject property, KeyBehaviour value)
         {
-            obj.SetValue(KeyBehaviourProperty, value);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            property.SetValue(KeyBehaviourProperty, value);
         }
 
         public static readonly DependencyProperty KeyBehaviourProperty =
             DependencyProperty.RegisterAttached("KeyBehaviour", typeof(KeyBehaviour), typeof(Keyboard), new PropertyMetadata(KeyBehaviour.None, KeyBehaviourChanged));
 
-        public static VirtualKeyCollection GetChordKeys(DependencyObject obj)
+        public static VirtualKeyCollection GetChordKeys(DependencyObject property)
         {
-            var collection = (VirtualKeyCollection)obj.GetValue(ChordKeysProperty);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            var collection = (VirtualKeyCollection)property.GetValue(ChordKeysProperty);
             if (collection == null)
             {
                 collection = new VirtualKeyCollection();
-                obj.SetValue(ChordKeysProperty, collection);
+                property.SetValue(ChordKeysProperty, collection);
             }
             return collection;
         }
 
-        public static void SetChordKeys(DependencyObject obj, VirtualKeyCollection value)
+        public static void SetChordKeys(DependencyObject property, VirtualKeyCollection value)
         {
-            obj.SetValue(ChordKeysProperty, value);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            property.SetValue(ChordKeysProperty, value);
         }
 
         public static readonly DependencyProperty ChordKeysProperty =
             DependencyProperty.RegisterAttached("ChordKeysInternal", typeof(VirtualKeyCollection), typeof(Keyboard), new PropertyMetadata(null, ChordKeysChanged));
 
-        public static string GetOutputText(DependencyObject obj)
+        public static string GetOutputText(DependencyObject property)
         {
-            return (string)obj.GetValue(OutputTextProperty);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            return (string)property.GetValue(OutputTextProperty);
         }
 
-        public static void SetOutputText(DependencyObject obj, string value)
+        public static void SetOutputText(DependencyObject property, string value)
         {
-            obj.SetValue(OutputTextProperty, value);
+            if (property == null)
+            {
+                throw new System.ArgumentNullException(nameof(property));
+            }
+
+            property.SetValue(OutputTextProperty, value);
         }
 
         public static readonly DependencyProperty OutputTextProperty =
@@ -143,12 +183,10 @@ namespace VisualKeyboard.Control
         /// <param name="e"></param>
         private void KeyMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            UIElement keyboardElement = sender as UIElement;
-            if (keyboardElement == null)
+            if (sender is UIElement keyboardElement)
             {
-                return;
-            }
-            ProcessGenericKeyPress(keyboardElement);
+                ProcessGenericKeyPress(keyboardElement);
+            };
         }
 
         /// <summary>
@@ -158,12 +196,10 @@ namespace VisualKeyboard.Control
         /// <param name="e"></param>
         private void ButtonKeyClicked(object sender, RoutedEventArgs e)
         {
-            UIElement keyboardElement = sender as UIElement;
-            if (keyboardElement == null)
+            if (sender is UIElement keyboardElement)
             {
-                return;
+                ProcessGenericKeyPress(keyboardElement);
             }
-            ProcessGenericKeyPress(keyboardElement);
         }
 
         /// <summary>
@@ -193,8 +229,7 @@ namespace VisualKeyboard.Control
             //Controls derived from ButtonBase have specific code to determine when the control is clicked
             //use the Click event if it is available.  If the child element is not a button then use it's
             //left mouse button down event to trigger the key press logic
-            var button = child as ButtonBase;
-            if (button != null)
+            if (child is ButtonBase button)
             {
                 button.Click += ButtonKeyClicked;
             }
@@ -212,8 +247,7 @@ namespace VisualKeyboard.Control
         /// <param name="e"></param>
         private void LogicalKeyPressed(object sender, LogicalKeyEventArgs e)
         {
-            ModifierKeyBase modifierKey = sender as ModifierKeyBase;
-            if (modifierKey != null)
+            if (sender is ModifierKeyBase modifierKey)
             {
                 RaiseModifierChangedEvent((VirtualKeyCode)modifierKey.KeyCode, modifierKey.IsInEffect);
             }
@@ -252,8 +286,7 @@ namespace VisualKeyboard.Control
                 return;
             }
 
-            Keyboard parentKeyboard = VisualTreeHelper.GetParent(child) as Keyboard;
-            if (parentKeyboard == null || parentKeyboard.keys == null)
+            if (!(VisualTreeHelper.GetParent(child) is Keyboard parentKeyboard) || parentKeyboard.keys == null)
             {
                 return;
             }
@@ -285,7 +318,6 @@ namespace VisualKeyboard.Control
                 return;
             }
 
-            //parentKeyboard.ConnectToChildControl(child);
             parentKeyboard.keys.Add(child, key);
             key.KeyPressed += parentKeyboard.LogicalKeyPressed;
 
@@ -322,40 +354,70 @@ namespace VisualKeyboard.Control
             switch (keyType)
             {
                 case KeyBehaviour.VirtualKey:
-                    if (keyCode != VirtualKeyCode.None)
-                    {
-                        result = new VirtualKey(inputSimulator, keyCode);
-                    }
+                    result = CreateVirtualKey(keyCode, inputSimulator);
                     break;
                 case KeyBehaviour.Chord:
-                    if (chordKeys != null && chordKeys.Any())
-                    {
-                        result = new ChordKey(inputSimulator, keyCode, chordKeys);
-                    }
+                    result = CreateChordKey(keyCode, inputSimulator, chordKeys);
                     break;
                 case KeyBehaviour.Text:
-                    if (!string.IsNullOrEmpty(outputText))
-                    {
-                        result = new TextKey(inputSimulator, keyCode, outputText);
-                    }
+                    result = CreateTextKey(keyCode, inputSimulator, outputText);
                     break;
                 case KeyBehaviour.InstantaneousModifier:
-                    if (keyCode != VirtualKeyCode.None)
-                    {
-                        result = new InstantaneousModifierKey(inputSimulator, keyCode);
-                    }
+                    result = CreateInstantaneousModifierKey(keyCode, inputSimulator);
                     break;
                 case KeyBehaviour.TogglingModifier:
-                    if (keyCode != VirtualKeyCode.None)
-                    {
-                        result = new TogglingModifierKey(inputSimulator, keyCode);
-                    }
+                    result = CreateTogglingModifierKey(keyCode, inputSimulator);
                     break;
                 default:
                     break;
             }
 
             return result;
+        }
+
+        private static VirtualKey CreateVirtualKey(VirtualKeyCode keyCode, IInputSimulator inputSimulator)
+        {
+            if (keyCode == VirtualKeyCode.None)
+            {
+                return null;
+            }
+            return new VirtualKey(inputSimulator, keyCode);
+        }
+
+        private static ChordKey CreateChordKey(VirtualKeyCode keyCode, IInputSimulator inputSimulator, VirtualKeyCollection chordKeys)
+        {
+            if (chordKeys == null || !chordKeys.Any())
+            {
+                return null;
+            }
+            return new ChordKey(inputSimulator, keyCode, chordKeys);
+        }
+
+        private static TextKey CreateTextKey(VirtualKeyCode keyCode, IInputSimulator inputSimulator, string outputText)
+        {
+            if (string.IsNullOrEmpty(outputText))
+            {
+                return null;
+            }
+            return new TextKey(inputSimulator, keyCode, outputText);
+        }
+
+        private static InstantaneousModifierKey CreateInstantaneousModifierKey(VirtualKeyCode keyCode, IInputSimulator inputSimulator)
+        {
+            if (keyCode == VirtualKeyCode.None)
+            {
+                return null;
+            }
+            return new InstantaneousModifierKey(inputSimulator, keyCode);
+        }
+
+        private static TogglingModifierKey CreateTogglingModifierKey(VirtualKeyCode keyCode, IInputSimulator inputSimulator)
+        {
+            if (keyCode == VirtualKeyCode.None)
+            {
+                return null;
+            }
+            return new TogglingModifierKey(inputSimulator, keyCode);
         }
     }
 }

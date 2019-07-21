@@ -5,7 +5,7 @@ namespace VisualKeyboard.Control
 {
     internal class ChordKey : LogicalKey
     {
-        private List<WindowsInput.Native.VirtualKeyCode> modifierKeys;
+        private readonly List<WindowsInput.Native.VirtualKeyCode> modifierKeys;
 
         public ChordKey(IInputSimulator inputSimulator, VirtualKeyCode key, VirtualKeyCollection modifierKeys) : base(inputSimulator, key)
         {
@@ -20,8 +20,10 @@ namespace VisualKeyboard.Control
         {
             ModifiedKeyStrokes(modifierKeys);
 
-            List<WindowsInput.Native.VirtualKeyCode> pressedKeys = new List<WindowsInput.Native.VirtualKeyCode>();
-            pressedKeys.Add(KeyCode);
+            List<WindowsInput.Native.VirtualKeyCode> pressedKeys = new List<WindowsInput.Native.VirtualKeyCode>
+            {
+                KeyCode
+            };
             pressedKeys.AddRange(modifierKeys);
 
             LogicalKeyEventArgs args = new LogicalKeyEventArgs(pressedKeys);

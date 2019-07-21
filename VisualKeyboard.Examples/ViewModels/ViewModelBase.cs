@@ -9,7 +9,7 @@ namespace VisualKeyboard.Examples
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Dictionary<string, object> propertyValueMap;
+        private readonly Dictionary<string, object> propertyValueMap;
 
         protected ViewModelBase()
         {
@@ -29,7 +29,7 @@ namespace VisualKeyboard.Examples
 
         protected T Get<T>(Expression<Func<T>> path)
         {
-            return Get(path, default(T));
+            return Get(path, default);
         }
 
         protected virtual T Get<T>(Expression<Func<T>> path, T defaultValue)
@@ -71,8 +71,7 @@ namespace VisualKeyboard.Examples
             }
 
             Expression body = expression.Body;
-            MemberExpression memberExpression = body as MemberExpression;
-            if (memberExpression == null)
+            if (!(body is MemberExpression memberExpression))
             {
                 memberExpression = (MemberExpression)((UnaryExpression)body).Operand;
             }
