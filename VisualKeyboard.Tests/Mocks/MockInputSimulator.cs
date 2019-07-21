@@ -9,9 +9,9 @@ namespace VisualKeyboard.Tests
 {
     internal partial class MockInputSimulator : IInputSimulator, IKeyboardSimulator, IInputDeviceStateAdaptor
     {
-        private Dictionary<VirtualKeyCode, KeyState> keyStates;
+        private readonly Dictionary<VirtualKeyCode, KeyState> keyStates;
         private bool isCapsLockOn;
-        private StringBuilder stringBuilder;
+        private readonly StringBuilder stringBuilder;
 
         private enum KeyState
         {
