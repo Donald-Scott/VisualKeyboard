@@ -9,7 +9,6 @@
     <!--*-->
     <authors>Don Scott</authors>
     <owners>Don Scott</owners>
-
     <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/Donald-Scott/VisualKeyboard</projectUrl>
     <!--
@@ -20,7 +19,7 @@
     <!--*-->
     <description>A WPF on screen keyboard control</description>
     <!--*-->
-    <releaseNotes>Initial release</releaseNotes>
+    <releaseNotes>Stability improvements</releaseNotes>
     <copyright>Copyright ©  2019</copyright>
     <tags>
     </tags>
