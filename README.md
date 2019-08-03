@@ -39,4 +39,4 @@ xmlns:kbd="clr-namespace:VisualKeyboard.Control;assembly=VisualKeyboard.Control"
 ```
 ![alt text](https://github.com/Donald-Scott/VisualKeyboard/blob/master/VisualKeyboard.Examples/Images/qwe_kbd.png "Sample keyboard")
 
-Since the behaviour of the keyboad is defined using attached properties any UIElement that can be added to a Grid can be used as a keyboard key.  If you want to add additional buttons that execute a command other than keyboard input, no problem, just set the KeyBehaviour attached property to "none" or omit this attached property all together and the button will not ack as a keyboard key.
+Since the behaviour of the keyboad keys are defined using attached properties any UIElement that can be added to a Grid can be used as a keyboard key.  If you want to add additional buttons that execute a command other than keyboard input, no problem, just set the KeyBehaviour attached property to "none" or omit this attached property all together and the button will not ack as a keyboard key.
